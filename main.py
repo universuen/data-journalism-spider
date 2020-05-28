@@ -19,18 +19,17 @@ if __name__ == '__main__':
             try:
                 page = get_page(url)
                 page.encoding = 'utf-8'
-                if page.status_code == 404:
-                    break
-                html = page.text
-                soup = BeautifulSoup(html, 'html.parser')
-                content = soup.find('div', attrs={'class':'content'}).find_all('p')
-                for i in range(len(content)):
-                    content[i] = content[i].text
-                filename = 'data/' + str(text_id) +'.txt'
-                with open(filename, 'w') as f:
-                    for i in content:
-                        f.write(i)
-                        f.write('\n')
-                print(text_id)
+                if page.status_code != 404:
+                    html = page.text
+                    soup = BeautifulSoup(html, 'html.parser')
+                    content = soup.find('div', attrs={'class':'content'}).find_all('p')
+                    for i in range(len(content)):
+                        content[i] = content[i].text
+                    filename = 'data/' + str(text_id) +'.txt'
+                    with open(filename, 'w') as f:
+                        for i in content:
+                            f.write(i)
+                            f.write('\n')
+                    print(text_id)
             except:
                 pass
