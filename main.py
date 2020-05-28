@@ -12,8 +12,8 @@ def get_page(url):
     return requests.get(url, headers=headers)
 
 if __name__ == '__main__':
-    for text_id in range(9183059, 9197224):
-        for date in range(13, 29):
+    for text_id in range(9190000, 9197224):
+        for date in range(21, 29):
             # 构造URL
             url = 'http://www.chinanews.com/cj/2020/05-' + str(date) + '/' + str(text_id) + '.shtml'
             print(url)
