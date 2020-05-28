@@ -14,7 +14,7 @@ def get_page(url):
 if __name__ == '__main__':
     for text_id in range(9183059, 9197224):
         for date in range(13, 29):
-            url = 'http://www.chinanews.com/gn/2020/05-' + str(date) + '/' + str(text_id) + '.shtml'
+            url = 'http://www.chinanews.com/cj/2020/05-' + str(date) + '/' + str(text_id) + '.shtml'
             print(url)
             try:
                 page = get_page(url)
